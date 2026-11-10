@@ -33,10 +33,10 @@ class LocalRepository:
     def isit_a_git_repo(self)->bool:
             git_path = self.repo_location / ".git"
 
-            print("Checking path:", self.repo_location)
-            print("Git path:", git_path)
-            print("Git exists:", git_path.exists())
-            print("Git is directory:", git_path.is_dir())
+            #print("Checking path:", self.repo_location)
+            #print("Git path:", git_path)
+            #print("Git exists:", git_path.exists())
+            #print("Git is directory:", git_path.is_dir())
 
             return git_path.is_dir()    
         #return (self.repo_location/".git").is_dir()
@@ -91,9 +91,10 @@ if __name__=="__main__":
         print(f"Repo loaded: {summary_data['root_path']}")
         print(f"Git Repo: {summary_data['is_git']}")
         print(f"Total files: {summary_data['total_files']}")
-
+        """
         for file in repo.get_all_files():
             print(file)
+        """
     except(FileNotFoundError, NotADirectoryError) as error:
         print(f"Error: {error}")
-
+        
